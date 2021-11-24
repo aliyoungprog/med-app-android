@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+
+    <SearchView
+        android:id="@+id/main_fragment_search_view"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/background_border"
+        android:backgroundTint="@color/main_grey"
+        android:queryBackground="@null"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/main_fragment_search_view">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="36dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/menu_bar_clinic"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:contentDescription="@string/menu_bar_item_img"
+                android:src="@drawable/bg_black_circle_pressed" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Клиника"
+                android:textAlignment="center"
+                android:textColor="@color/main_blue"
+                android:textSize="12sp"
+                app:layout_constraintEnd_toEndOf="@+id/menu_bar_clinic"
+                app:layout_constraintStart_toStartOf="@+id/menu_bar_clinic"
+                app:layout_constraintTop_toBottomOf="@id/menu_bar_clinic" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="36dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/menu_bar_specialist"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:contentDescription="@string/menu_bar_item_img"
+                android:src="@drawable/bg_black_circle_pressed" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Специалист"
+                android:textAlignment="center"
+                android:textColor="@color/main_blue"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="36dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/menu_bar_service"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:contentDescription="@string/menu_bar_item_img"
+                android:src="@drawable/bg_black_circle_pressed" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Услуги"
+                android:textAlignment="center"
+                android:textColor="@color/main_blue"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+        <LinearLayout
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/menu_bar_symptom"
+                android:layout_width="62dp"
+                android:layout_height="62dp"
+                android:contentDescription="@string/menu_bar_item_img"
+                android:src="@drawable/bg_black_circle_pressed" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Симптомы"
+                android:textAlignment="center"
+                android:textColor="@color/main_blue"
+                android:textSize="12sp" />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

@@ -1,0 +1,61 @@
+Activity - single, focused thing that the user can do. Activity class takes care of creating a window
+for you in which you can place your UI with: setContentView(view)
+
+Intent filters - they provide the ability to launch an activity based not only on an explicit
+request, but also an implicit one.
+
+Implicit Intent - Start the Send email activity in the gmail app.
+Explicit Intent - Start a Send Email screen in any activity that can do the job.
+
+When the system UI asks a user which app to use in performing a task, that's and intent
+filter at work.
+
+We can take advantage of this feature using <intent-filter> attribute in the <activity> element
+
+<action> (<action android:name="android.intent.action.SEND">) - element specifies
+that this activity sends data.
+
+<category> element (<category android:name="android.intent.category.DEFAULT">) -
+enables the activity to receive launch requests.
+
+<data> (<data android:mimeType="text/plain">) specifies the type of data this activity can send.
+
+val sendIntent = Intent().apply {
+    action = Intent.ACTION_SEND
+    type = "text/plain"
+    putExtra(Intent.EXTRA_TEXT, textMessage)
+}
+startActivity(sendIntent)
+-
+Declare permissions
+
+We can use the manifest's <activity> tag to control which apps can start a particular activity.
+A parent activity cannot launch a child activity unless both have the sam permissions in their
+manifest. If you declare a <uses-permission> element for a parent activity, each child activity
+must have a matching <uses-permission> element.
+
+Managing the activity lifecycle.
+
+onCreate() - must implement this callback which fires when the system creates your activity.
+Implementation should initialize the essential components of your activity. This is wen you call
+setContentView() to define the layout for the activity's user interface.
+
+onStart() - when activity becomes visible to the user. The callback contains what amounts to the
+activities final preparations for coming to the foreground and becoming interactive.
+
+onResume() - the system invokes this callback just before the activity starts interacting
+with the user. At this point, the activity is at the top of the activity stack, and captures all
+user input. Most of the app's core functionality is implemented in the onResume() method.
+
+onPause() - the system calls onPause() when the activity loses focus and enters a Paused state.
+This state occurs when, for example, the user taps the Back or Recents button. It technically
+means your activity is still partially visible but most often is an indication that the usr is
+leaving the activity, and the activity will soon enter the Stopped or Resumed state.
+You should not use this callback to make network calls, or execute database transactions.
+
+onStop() - the system calls the onStop when activity no longer visible to the user.
+
+onRestart() - the system calls this callback when an activity in the Stopped state is about to
+restart. onStart restores the state of the activity from the time that it was stopped.
+
+onDestroy() - the system invokes this callback before an activity is destroyed.

@@ -7,4 +7,6 @@
     <string name="health_menu_title">Здоровье</string>
     <string name="notification_menu_title">Уведомления</string>
     <string name="profile_menu_title">Профиль</string>
+    <string name="menu_bar_item_img">menu_bar_item_img</string>
+    <string name="test_txt">test</string>
 </resources>

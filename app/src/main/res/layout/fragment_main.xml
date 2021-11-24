@@ -1,31 +1,79 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".presentation.MainFragment">
+    android:layout_height="wrap_content">
 
-
-    <SearchView
-        android:id="@+id/mainFragmentSearchView"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:tooltipText="Клиника, врач или услуга" />
+        android:layout_height="wrap_content">
 
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        tools:listitem="@layout/menu_bar"
-        app:layout_constraintTop_toBottomOf="@id/mainFragmentSearchView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-        android:orientation="horizontal"
-        tools:itemCount="4"
-        android:layout_gravity="center_horizontal"/>
+        <include
+            android:id="@+id/main_fragment_nav_bar_menu_item"
+            layout="@layout/main_fragment_nav_bar_menu" />
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+        <LinearLayout
+            android:id="@+id/main_fragment_first_banner_item_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/main_fragment_nav_bar_menu_item">
+
+            <androidx.recyclerview.widget.RecyclerView
+
+                android:id="@+id/main_fragment_first_banner_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                tools:itemCount="2"
+                tools:listitem="@layout/main_fragment_first_banner_item" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/main_fragment_bottom_title_linear_layout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_fragment_first_banner_item_linear_layout">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Лучшие клиники"
+                android:textColor="@color/main_blue"
+                android:textSize="22sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/main_fragment_show_all_btn"
+                android:layout_width="56dp"
+                android:layout_height="match_parent"
+                android:layout_gravity="center"
+                android:background="@drawable/backround_border_for_text"
+                android:backgroundTint="@color/main_grey"
+                android:gravity="center"
+                android:text="Все"
+                android:textColor="@color/main_blue" />
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/main_fragment_second_banner_item"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:orientation="horizontal"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/main_fragment_bottom_title_linear_layout"
+            tools:listitem="@layout/main_fragment_second_banner_item" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

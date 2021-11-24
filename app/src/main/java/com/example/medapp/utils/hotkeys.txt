@@ -1,0 +1,3 @@
+cmd + D - duplicate line
+cmd + Y - delete line
+cmd + B - go to definition
