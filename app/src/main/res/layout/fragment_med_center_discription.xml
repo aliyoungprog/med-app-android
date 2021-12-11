@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragments.MedCenterDescriptionFragment">
+    tools:context=".presentation.main.fragments.MedCenterDescriptionFragment">
 
     <com.synnapps.carouselview.CarouselView
         android:id="@+id/carousel_view"
@@ -122,6 +122,7 @@
             android:text="+7 775 932 96 53" />
 
     </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

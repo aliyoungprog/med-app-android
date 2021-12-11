@@ -1,0 +1,6 @@
+#7 data binding:
+Надо в xml файл добавить <layout>
+Затем внутри обазначить <data> переменную.
+Внутри тэга <data>
+    <variable>
+</data>

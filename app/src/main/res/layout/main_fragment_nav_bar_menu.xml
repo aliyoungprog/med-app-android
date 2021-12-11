@@ -1,20 +1,77 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <SearchView
-        android:id="@+id/main_fragment_search_view"
+    <!--    <SearchView-->
+    <!--        android:id="@+id/main_fragment_search_view"-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="wrap_content"-->
+    <!--        android:layout_marginTop="16dp"-->
+    <!--        android:background="@drawable/background_border"-->
+    <!--        android:backgroundTint="@color/main_grey"-->
+    <!--        android:queryBackground="@null"-->
+    <!--        app:layout_constraintEnd_toEndOf="parent"-->
+    <!--        app:layout_constraintStart_toStartOf="parent"-->
+    <!--        app:layout_constraintTop_toTopOf="parent" />-->
+
+    <Toolbar
+        android:id="@+id/main_toolbar"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:background="@drawable/background_border"
-        android:backgroundTint="@color/main_grey"
-        android:queryBackground="@null"
+        android:layout_height="?attr/actionBarSize"
+        android:background="@color/main_blue"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/main_tool_default_text"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/main_tool_bar_greeding"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:gravity="center"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="Привет, Абдуали!" />
+
+            <ImageView
+                android:id="@+id/main_tool_bar_login"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="16dp"
+                android:contentDescription="Войти"
+                android:gravity="center"
+                android:src="@drawable/ic_baseline_login_24"
+                android:textSize="18sp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </Toolbar>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -23,26 +80,28 @@
         android:gravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/main_fragment_search_view">
+        app:layout_constraintTop_toBottomOf="@+id/main_toolbar">
 
         <LinearLayout
+            android:id="@+id/main_nav_bar_clinic"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="36dp"
+            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/menu_bar_clinic"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:contentDescription="@string/menu_bar_item_img"
-                android:src="@drawable/bg_black_circle_pressed" />
+                android:src="@drawable/ic_emde_clinic" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Клиника"
+                android:text="Клиники"
                 android:textAlignment="center"
                 android:textColor="@color/main_blue"
                 android:textSize="12sp"
@@ -52,18 +111,20 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/main_nav_bar_specialist"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="36dp"
+            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/menu_bar_specialist"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:contentDescription="@string/menu_bar_item_img"
-                android:src="@drawable/bg_black_circle_pressed" />
+                android:src="@drawable/ic_emde_specialist" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -75,18 +136,20 @@
         </LinearLayout>
 
         <LinearLayout
+            android:id="@+id/main_nav_bar_service"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginRight="36dp"
+            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/menu_bar_service"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:contentDescription="@string/menu_bar_item_img"
-                android:src="@drawable/bg_black_circle_pressed" />
+                android:src="@drawable/ic_emde_services" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -98,18 +161,19 @@
         </LinearLayout>
 
         <LinearLayout
-
+            android:id="@+id/main_nav_bar_symptom"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:clickable="true"
             android:gravity="center"
             android:orientation="vertical">
 
             <ImageView
                 android:id="@+id/menu_bar_symptom"
-                android:layout_width="62dp"
-                android:layout_height="62dp"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
                 android:contentDescription="@string/menu_bar_item_img"
-                android:src="@drawable/bg_black_circle_pressed" />
+                android:src="@drawable/ic_emde_simptoms" />
 
             <TextView
                 android:layout_width="wrap_content"

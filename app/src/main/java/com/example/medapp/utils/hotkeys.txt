@@ -1,3 +1,5 @@
 cmd + D - duplicate line
 cmd + Y - delete line
 cmd + B - go to definition
+cmd + E - recent files
+cmd + shift + E - recent files u just edited

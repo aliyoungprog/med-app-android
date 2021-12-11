@@ -1,79 +1,93 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <ScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <include
-            android:id="@+id/main_fragment_nav_bar_menu_item"
-            layout="@layout/main_fragment_nav_bar_menu" />
-
-        <LinearLayout
-            android:id="@+id/main_fragment_first_banner_item_linear_layout"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/main_fragment_nav_bar_menu_item">
+            android:layout_height="wrap_content">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <include
+                android:id="@+id/main_fragment_nav_bar_menu_item"
+                layout="@layout/main_fragment_nav_bar_menu" />
 
-                android:id="@+id/main_fragment_first_banner_item"
+            <LinearLayout
+                android:id="@+id/main_fragment_first_banner_item_linear_layout"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:layout_margin="16dp"
                 android:orientation="horizontal"
-                tools:itemCount="2"
-                tools:listitem="@layout/main_fragment_first_banner_item" />
-        </LinearLayout>
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/main_fragment_nav_bar_menu_item">
 
-        <LinearLayout
-            android:id="@+id/main_fragment_bottom_title_linear_layout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_fragment_first_banner_item_linear_layout">
+                <androidx.recyclerview.widget.RecyclerView
 
-            <TextView
-                android:layout_width="wrap_content"
+                    android:id="@+id/main_fragment_first_banner_item"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    tools:itemCount="2"
+                    tools:listitem="@layout/main_fragment_first_banner_item" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/main_fragment_bottom_title_linear_layout"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Лучшие клиники"
-                android:textColor="@color/main_blue"
-                android:textSize="22sp"
-                android:textStyle="bold" />
+                android:layout_margin="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_fragment_first_banner_item_linear_layout">
 
-            <TextView
-                android:id="@+id/main_fragment_show_all_btn"
-                android:layout_width="56dp"
-                android:layout_height="match_parent"
-                android:layout_gravity="center"
-                android:background="@drawable/backround_border_for_text"
-                android:backgroundTint="@color/main_grey"
-                android:gravity="center"
-                android:text="Все"
-                android:textColor="@color/main_blue" />
-        </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:text="Лучшие клиники"
+                    android:textColor="@color/main_blue"
+                    android:textSize="22sp"
+                    android:textStyle="bold" />
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/main_fragment_second_banner_item"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_margin="16dp"
-            android:orientation="horizontal"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/main_fragment_bottom_title_linear_layout"
-            tools:listitem="@layout/main_fragment_second_banner_item" />
+                <TextView
+                    android:id="@+id/main_fragment_show_all_btn"
+                    android:layout_width="56dp"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="center"
+                    android:background="@drawable/backround_border_for_text"
+                    android:backgroundTint="@color/main_grey"
+                    android:gravity="center"
+                    android:text="Все"
+                    android:textColor="@color/main_blue" />
+            </LinearLayout>
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+            <ProgressBar
+                android:id="@+id/main_fragment_second_banner_loader"
+                android:layout_width="32dp"
+                android:layout_height="32dp"
+                android:layout_margin="16dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_fragment_bottom_title_linear_layout" />
+
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/main_fragment_second_banner_item"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="16dp"
+                android:orientation="horizontal"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/main_fragment_bottom_title_linear_layout"
+                tools:listitem="@layout/main_fragment_second_banner_item" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</layout>

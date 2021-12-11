@@ -5,22 +5,22 @@
     android:title="@string/main_menu_title"
     android:icon="@drawable/ic_home"
     />
-<item
-    android:id="@+id/messagesFragment"
-    android:title="@string/messages_menu_title"
-    android:icon="@drawable/ic_message"
-    />
-    <item
-        android:id="@+id/myHealthFragment"
-        android:title="@string/health_menu_title"
-        android:icon="@drawable/ic_health"
-        />
+<!--<item-->
+<!--    android:id="@+id/messagesFragment"-->
+<!--    android:title="@string/messages_menu_title"-->
+<!--    android:icon="@drawable/ic_message"-->
+<!--    />-->
+<!--    <item-->
+<!--        android:id="@+id/myHealthFragment"-->
+<!--        android:title="@string/health_menu_title"-->
+<!--        android:icon="@drawable/ic_health"-->
+<!--        />-->
 
-    <item
-        android:id="@+id/notificationFragment"
-        android:title="@string/notification_menu_title"
-        android:icon="@drawable/ic_notifications"
-        />
+<!--    <item-->
+<!--        android:id="@+id/notificationFragment"-->
+<!--        android:title="@string/notification_menu_title"-->
+<!--        android:icon="@drawable/ic_notifications"-->
+<!--        />-->
 
     <item
         android:id="@+id/profileFragment"

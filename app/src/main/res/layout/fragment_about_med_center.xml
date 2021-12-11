@@ -1,37 +1,43 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".presentation.fragments.AboutMedCenterFragment">
+    tools:context=".presentation.main.fragments.AboutMedCenterFragment">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+
+    <include
+        android:id="@+id/about_fragment_search_view"
+        layout="@layout/search_layout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:id="@+id/about_fragment_scroll_view"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        tools:context=".presentation.fragments.AboutMedCenterFragment">
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/about_fragment_search_view">
 
-        <SearchView
-            android:id="@+id/about_fragment_search_view"
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:background="@drawable/background_border"
-            android:backgroundTint="@color/main_grey"
-            android:queryBackground="@null"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            android:minHeight="500dp"
+            tools:context=".presentation.main.fragments.AboutMedCenterFragment">
 
-        <androidx.recyclerview.widget.RecyclerView
-            android:id="@+id/fa_recycler_view"
-            android:layout_width="match_parent"
-            android:layout_height="0dp"
-            android:layout_marginTop="16dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/about_fragment_search_view"
-            tools:listitem="@layout/about_med_center_base_component" />
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/fa_recycler_view"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:listitem="@layout/about_med_center_base_component" />
 
-    </androidx.constraintlayout.widget.ConstraintLayout>
-</ScrollView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </ScrollView>
+</androidx.constraintlayout.widget.ConstraintLayout>
