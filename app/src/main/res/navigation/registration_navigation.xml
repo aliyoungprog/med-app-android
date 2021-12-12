@@ -9,5 +9,14 @@
         android:id="@+id/registrationMainFragment"
         android:name="com.example.medapp.presentation.registration.fragment.RegistrationMainFragment"
         android:label="RegistrationMainFragment"
-        tools:layout="@layout/fragment_main_registration"/>
+        tools:layout="@layout/fragment_main_registration">
+        <action
+            android:id="@+id/action_registrationMainFragment_to_registrationAuthFragment"
+            app:destination="@id/registrationAuthFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationAuthFragment"
+        android:name="com.example.medapp.presentation.registration.fragment.RegistrationAuthFragment"
+        android:label="RegistrationAuthFragment"
+        tools:layout="@layout/fragment_authorization"/>
 </navigation>

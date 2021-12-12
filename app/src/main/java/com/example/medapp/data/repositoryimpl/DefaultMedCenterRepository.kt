@@ -21,5 +21,4 @@ class DefaultMedCenterRepository(
     override suspend fun getBestMedCenters(): Response<List<MedCenter>> {
         return retrofitBuilder.create().getBestMedCenters()
     }
-
 }

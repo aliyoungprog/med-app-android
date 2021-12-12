@@ -12,6 +12,5 @@ class GetAllMedServicesUseCase(private val medCentersRepository: MedCenterReposi
         } else {
             NetworkResult.Error(message = response.message())
         }
-
     }
 }

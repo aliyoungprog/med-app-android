@@ -1,5 +1,6 @@
 package com.example.medapp.presentation.main.fragments
 
+import android.content.Context.MODE_PRIVATE
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -32,6 +33,7 @@ class MainFragment : Fragment() {
     private val navBarSymptoms get() = main_nav_bar_symptom
     private val navBarLogin get() = main_tool_bar_login
     private val secondBannerLoader get() = main_fragment_second_banner_loader
+    private val navBarGreeting get() = main_tool_bar_greeting
 
     private val mainFragmentViewModel: MainFragmentViewModel by sharedViewModel()
 
@@ -44,11 +46,16 @@ class MainFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initAll()
+    }
+
+    override fun onResume() {
+        super.onResume()
         initView()
     }
 
-
-    private fun initView() {
+    private fun initAll() {
+        initView()
         initViewModel()
         initAdapter()
         initListeners()
@@ -116,5 +123,19 @@ class MainFragment : Fragment() {
 
     private fun initViewModel() {
         mainFragmentViewModel.getBestMedCenters()
+    }
+
+    private fun initView() {
+        val pref = context?.getSharedPreferences("user_data", MODE_PRIVATE)
+        val phoneNumber = pref?.getString("user_phoneNumber", "")
+        val fname = pref?.getString("user_fname", "")
+        if (!phoneNumber.isNullOrBlank()) {
+            navBarLogin.visibility = View.GONE
+            navBarGreeting.visibility = View.VISIBLE
+            navBarGreeting.text = "Привет, $fname!"
+        } else {
+            navBarLogin.visibility = View.VISIBLE
+            navBarGreeting.visibility = View.GONE
+        }
     }
 }

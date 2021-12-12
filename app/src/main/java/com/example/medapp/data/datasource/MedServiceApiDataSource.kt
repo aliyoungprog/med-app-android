@@ -7,7 +7,10 @@ import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Response
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.http.Body
 import retrofit2.http.GET
+import retrofit2.http.POST
+import retrofit2.http.Path
 
 interface MedServiceApiDataSource {
 
@@ -19,6 +22,12 @@ interface MedServiceApiDataSource {
 
     @GET("/medcenters/best")
     suspend fun getBestMedCenters(): Response<List<MedCenter>>
+
+    @POST("/add_user")
+    suspend fun addUser(@Body user: User): Response<User>
+
+    @GET("/users/find_by_phone/{phone_number}")
+    suspend fun getUserByPhoneNumber(@Path("phone_number") phoneNumber: String): Response<User>
 }
 
 class RetrofitBuilder {
