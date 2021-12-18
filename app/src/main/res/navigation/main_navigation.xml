@@ -25,6 +25,11 @@
                 app:argType="com.example.medapp.domain.entity.MedCenter" />
 
         </action>
+        <action
+            android:id="@+id/action_mainFragment_to_freelanceDoctors"
+            app:destination="@id/freelanceDoctors"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
     </fragment>
 
     <fragment
@@ -53,4 +58,9 @@
         android:name="com.example.medapp.presentation.main.fragments.MedCenterDescriptionFragment"
         android:label="fragment_med_center_discription"
         tools:layout="@layout/fragment_med_center_discription" />
+    <fragment
+        android:id="@+id/freelanceDoctors"
+        android:name="com.example.medapp.presentation.main.fragments.FreelanceDoctorsFragment"
+        android:label="freelance_doctors_fragment"
+        tools:layout="@layout/tab_freelance_doctors_fragment" />
 </navigation>

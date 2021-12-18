@@ -76,16 +76,11 @@ class MainFragment : Fragment() {
 //            findNavController()
 //                .navigate(MainFragmentDirections.actionMainFragmentToAboutMedCentrFragment())
         }
-        navBarClinic.setSafeClickListener {
-            AboutMedCenterFragment.getInstance()
-                .show(requireActivity().supportFragmentManager, "clinics")
-        }
-        navBarSpecialist.setSafeClickListener { }
+        navBarClinic.setSafeClickListener { AboutMedCenterFragment.getInstance().show(requireActivity().supportFragmentManager, "clinics") }
+        navBarSpecialist.setSafeClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToFreelanceDoctors()) }
         navBarService.setSafeClickListener { }
         navBarSymptoms.setSafeClickListener { }
-        navBarLogin.setSafeClickListener {
-            requireActivity().startActivity(Intent(context, RegistrationActivity::class.java))
-        }
+        navBarLogin.setSafeClickListener { requireActivity().startActivity(Intent(context, RegistrationActivity::class.java)) }
     }
 
     private fun initObservers() {
@@ -122,7 +117,7 @@ class MainFragment : Fragment() {
     }
 
     private fun initViewModel() {
-        mainFragmentViewModel.getBestMedCenters()
+        //mainFragmentViewModel.getBestMedCenters()
     }
 
     private fun initView() {
