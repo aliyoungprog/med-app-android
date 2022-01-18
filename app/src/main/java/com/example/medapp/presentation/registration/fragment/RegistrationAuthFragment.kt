@@ -1,11 +1,9 @@
 package com.example.medapp.presentation.registration.fragment
 
-import android.content.Context
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.fragment.app.Fragment
 import com.example.medapp.R
 import com.example.medapp.domain.entity.NetworkResult
@@ -19,9 +17,16 @@ import org.koin.android.viewmodel.ext.android.viewModel
 
 class RegistrationAuthFragment : Fragment() {
 
-    private val phoneNumber get() = user_phone_number_input
+    private val phoneNumber get() = user_phone_txt
     private val submitBtn get() = auth_btn_submit
     private val hideBtn get() = auth_hide_img
+
+    private val cellNumber get() = user_phone_input
+    private val uinNumber get() = user_uin_input
+
+    private val cellTxt get() = user_phone_txt
+    private val uinTxt get() = user_uin_txt
+    private val checkBox get() = authorization_check_box
 
     private val authViewModel: AuthViewModel by viewModel()
 
@@ -58,6 +63,17 @@ class RegistrationAuthFragment : Fragment() {
             }
 
         })
+        checkBox.setSafeClickListener {
+            if (checkBox.isChecked) {
+                cellNumber.visibility = View.VISIBLE
+                uinNumber.visibility = View.GONE
+
+
+            } else {
+                cellNumber.visibility = View.GONE
+                uinNumber.visibility = View.VISIBLE
+            }
+        }
     }
 
     private fun saveUser(user: User) {

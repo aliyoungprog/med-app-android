@@ -10,11 +10,11 @@
 <!--    android:title="@string/messages_menu_title"-->
 <!--    android:icon="@drawable/ic_message"-->
 <!--    />-->
-<!--    <item-->
-<!--        android:id="@+id/myHealthFragment"-->
-<!--        android:title="@string/health_menu_title"-->
-<!--        android:icon="@drawable/ic_health"-->
-<!--        />-->
+    <item
+        android:id="@+id/myHealthFragment"
+        android:title="@string/health_menu_title"
+        android:icon="@drawable/ic_baseline_health_and_safety_24"
+        />
 
 <!--    <item-->
 <!--        android:id="@+id/notificationFragment"-->
@@ -27,4 +27,13 @@
         android:title="@string/profile_menu_title"
         android:icon="@drawable/ic_profile"
         />
+
+
+    <item
+        android:id="@+id/doctorAdminFragment"
+        android:title="Врач"
+        android:icon="@drawable/ic_baseline_medical_services_24"
+        />
+
+
 </menu>

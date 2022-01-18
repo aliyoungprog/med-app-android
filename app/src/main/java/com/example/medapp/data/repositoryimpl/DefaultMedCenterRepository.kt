@@ -2,6 +2,7 @@ package com.example.medapp.data.repositoryimpl
 
 import com.example.medapp.data.datasource.RetrofitBuilder
 import com.example.medapp.domain.entity.MedCenter
+import com.example.medapp.domain.entity.News
 import com.example.medapp.domain.entity.User
 import com.example.medapp.domain.repository.MedCenterRepository
 import retrofit2.Response
@@ -20,5 +21,9 @@ class DefaultMedCenterRepository(
 
     override suspend fun getBestMedCenters(): Response<List<MedCenter>> {
         return retrofitBuilder.create().getBestMedCenters()
+    }
+
+    override suspend fun getAllNews(): Response<List<News>> {
+        return retrofitBuilder.create().getAllNews()
     }
 }

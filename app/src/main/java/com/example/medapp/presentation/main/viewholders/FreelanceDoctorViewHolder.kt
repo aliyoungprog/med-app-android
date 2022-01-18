@@ -9,9 +9,9 @@ import kotlinx.android.synthetic.main.freelance_doctor_view.view.*
 class FreelanceDoctorViewHolder(itemView: View, private val onDoctorClicked: (MedDoctor) -> Unit) :
     RecyclerView.ViewHolder(itemView) {
     fun bind(medDoctor: MedDoctor) {
-        itemView.sp_component_name_text_view.text = medDoctor.name
+        itemView.sp_component_name_text_view.text = medDoctor.fname
         itemView.sp_component_specialist_text_view.text = medDoctor.specialist
-        itemView.setSafeClickListener {
+        itemView.freelance_registration_btn.setSafeClickListener {
             onDoctorClicked.invoke(medDoctor)
         }
     }

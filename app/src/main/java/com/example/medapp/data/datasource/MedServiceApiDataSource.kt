@@ -1,6 +1,8 @@
 package com.example.medapp.data.datasource
 
 import com.example.medapp.domain.entity.MedCenter
+import com.example.medapp.domain.entity.MedDoctor
+import com.example.medapp.domain.entity.News
 import com.example.medapp.domain.entity.User
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
@@ -28,13 +30,25 @@ interface MedServiceApiDataSource {
 
     @GET("/users/find_by_phone/{phone_number}")
     suspend fun getUserByPhoneNumber(@Path("phone_number") phoneNumber: String): Response<User>
+
+    @GET("/doctors")
+    suspend fun getAllDoctors(): Response<List<MedDoctor>>
+
+    @GET("/doctors/{doctor_id}")
+    suspend fun getDoctorById(@Path("doctor_id") doctor_id: Int): Response<MedDoctor>
+
+    @GET("/news")
+    suspend fun getAllNews(): Response<List<News>>
+
 }
 
 class RetrofitBuilder {
     private val BASE_URL = "http://10.0.2.2:8080/"
 
     fun create(): MedServiceApiDataSource {
-        val logger = HttpLoggingInterceptor().apply { level = HttpLoggingInterceptor.Level.BASIC }
+        val logger = HttpLoggingInterceptor().apply {
+            level = HttpLoggingInterceptor.Level.BASIC
+        }
 
         val client = OkHttpClient.Builder()
             .addInterceptor(logger)

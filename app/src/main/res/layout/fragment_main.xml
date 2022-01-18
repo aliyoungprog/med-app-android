@@ -11,6 +11,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
+
             <include
                 android:id="@+id/main_fragment_nav_bar_menu_item"
                 layout="@layout/main_fragment_nav_bar_menu" />

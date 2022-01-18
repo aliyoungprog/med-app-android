@@ -12,6 +12,7 @@ import com.example.medapp.presentation.main.adapters.AboutFragmentBaseItemAdapte
 import com.example.medapp.presentation.main.viewmodel.AboutMedCenterViewModel
 import com.example.medapp.presentation.main.viewmodel.MainFragmentViewModel
 import com.google.android.material.bottomsheet.BottomSheetDialogFragment
+import kotlinx.android.synthetic.main.about_med_center_base_component.*
 import kotlinx.android.synthetic.main.fragment_about_med_center.*
 import org.koin.android.viewmodel.ext.android.sharedViewModel
 import org.koin.android.viewmodel.ext.android.viewModel
@@ -19,6 +20,7 @@ import org.koin.android.viewmodel.ext.android.viewModel
 class AboutMedCenterFragment : BottomSheetDialogFragment() {
 
     private val recyclerView get() = fa_recycler_view
+    private val assignBtn get() = am_component_buttons_registration
     private val mainFragmentViewModel: MainFragmentViewModel by sharedViewModel()
     private val aboutMedCenterViewModel: AboutMedCenterViewModel by viewModel()
 
@@ -50,6 +52,10 @@ class AboutMedCenterFragment : BottomSheetDialogFragment() {
         this.dismiss()
     }
 
+    private fun onWriteClicked(medCenter: MedCenter) {
+        // TODO
+    }
+
     private fun initViewModel() {
         aboutMedCenterViewModel.getAllMedCenters()
     }
@@ -69,7 +75,10 @@ class AboutMedCenterFragment : BottomSheetDialogFragment() {
     }
 
     private fun setAdapterForSuccess(medCenterList: List<MedCenter>) {
-        recyclerView.adapter = AboutFragmentBaseItemAdapter(medCenterList, ::medCenterClicked)
+        recyclerView.adapter = AboutFragmentBaseItemAdapter(
+            medCenterList, ::medCenterClicked,
+            ::onWriteClicked
+        )
     }
 
     private fun setAdapterForFailure() {

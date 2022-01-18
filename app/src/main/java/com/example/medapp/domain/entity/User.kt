@@ -8,7 +8,7 @@ import java.util.*
 @Parcelize
 data class User(
     @Expose
-    val id: Int? = null,
+    val user_id: Int? = null,
     @Expose
     val fname: String? = null,
     @Expose
@@ -16,5 +16,5 @@ data class User(
     @Expose
     val phone_number: String? = null,
     @Expose
-    val records: Date? = null
+    val user_doctor_id: Int ?= null
 ) : Parcelable

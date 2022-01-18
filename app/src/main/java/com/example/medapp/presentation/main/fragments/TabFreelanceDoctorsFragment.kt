@@ -32,8 +32,9 @@ class TabFreelanceDoctorsFragment : Fragment() {
     private fun initView() {
         spAdapter = FreelanceDoctorsAdapter(
             listOf(
-                MedDoctor(name = "Александр Александров", specialist = "Окушер, гинеколог"),
-                MedDoctor(name = "Иван Иванов", specialist = "Стамотолог")
+                MedDoctor(fname = "Александр Александров", specialist = "Окушер, гинеколог"),
+                MedDoctor(fname = "Иван Иванов", specialist = "Стамотолог"),
+                MedDoctor(fname = "Test test", specialist = "Стажер")
             ),
             ::medDoctorClicked
         )

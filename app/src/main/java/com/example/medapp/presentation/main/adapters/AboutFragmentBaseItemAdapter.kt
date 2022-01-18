@@ -1,7 +1,6 @@
 package com.example.medapp.presentation.main.adapters
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.medapp.R
@@ -10,7 +9,8 @@ import com.example.medapp.presentation.main.viewholders.AboutFragmentBaseItemVie
 
 class AboutFragmentBaseItemAdapter(
     private val itemList: List<MedCenter>,
-    private val onMedCenterClicked: (MedCenter) -> Unit
+    private val onMedCenterClicked: (MedCenter) -> Unit,
+    private val onWriteClicked: (MedCenter) -> Unit
 ) : RecyclerView.Adapter<AboutFragmentBaseItemViewHolder>() {
 
 
@@ -21,7 +21,8 @@ class AboutFragmentBaseItemAdapter(
         return AboutFragmentBaseItemViewHolder(
             LayoutInflater.from(parent.context)
                 .inflate(R.layout.about_med_center_base_component, parent, false),
-            onMedCenterClicked
+            onMedCenterClicked,
+            onWriteClicked
         )
     }
 

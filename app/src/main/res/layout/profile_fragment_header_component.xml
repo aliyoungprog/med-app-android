@@ -11,8 +11,8 @@
         android:layout_width="55dp"
         android:layout_height="55dp"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="22dp"
         android:src="@drawable/ic_baseline_account_circle_24"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -21,7 +21,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_marginTop="22dp"
+        android:layout_marginTop="38dp"
         android:text="Абдуали"
         android:textColor="@color/main_blue"
         android:textSize="20sp"
@@ -40,35 +40,6 @@
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/pf_header_img"
         app:layout_constraintTop_toBottomOf="@id/pf_header_name" />
-
-    <LinearLayout
-        android:id="@+id/pf_header_linear_layout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="22dp"
-        android:gravity="center"
-        app:layout_constraintStart_toEndOf="@+id/pf_header_img"
-        app:layout_constraintTop_toBottomOf="@id/pf_header_sname">
-
-        <TextView
-            android:id="@+id/pf_header_setings"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="75dp"
-            android:layout_weight="1"
-            android:text="Настройки профиля"
-            android:textColor="@color/black"
-            android:textSize="14sp" />
-
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:src="@drawable/ic_baseline_next" />
-
-    </LinearLayout>
-
 
     <TextView
         android:id="@+id/pf_header_logout"

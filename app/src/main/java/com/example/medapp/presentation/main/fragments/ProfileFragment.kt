@@ -1,7 +1,6 @@
 package com.example.medapp.presentation.main.fragments
 
 import android.content.Context
-import android.content.SharedPreferences
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -20,8 +19,11 @@ class ProfileFragment : Fragment() {
     private val notRegistredImage get() = pf_image_view_not_registred
     private val notRegistredText get() = pf_text_view_not_registred_txt
     private val logoutBtn get() = pf_header_logout
-    private val fname_textView get() = pf_header_name
-    private val lname_textView get() = pf_header_sname
+    private val fname_header_textView get() = pf_header_name
+    private val lname_header_textView get() = pf_header_sname
+    private val fname_textView get() = pf_body_name_text_view
+    private val lname_textView get() = pf_body_lname_text_view
+    private val phoneNumber_textView get() = pf_body_number_text_view
     private val pref get()= context?.getSharedPreferences("user_data", Context.MODE_PRIVATE)
 
     override fun onCreateView(
@@ -46,8 +48,11 @@ class ProfileFragment : Fragment() {
             headerComponent.visibility = View.VISIBLE
             notRegistredImage.visibility = View.GONE
             notRegistredText.visibility = View.GONE
-            fname_textView.text = fname
-            lname_textView.text = lname
+            fname_header_textView.text = fname
+            lname_header_textView.text = lname
+            fname_textView.setText(fname)
+            lname_textView.setText(lname)
+            phoneNumber_textView.setText(phoneNumber)
         } else {
             linearLayout.visibility = View.GONE
             headerComponent.visibility = View.GONE

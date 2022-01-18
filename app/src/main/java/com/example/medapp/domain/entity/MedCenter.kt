@@ -16,7 +16,8 @@ data class MedCenter(
     var rating: Double? = null,
     @Expose
     var workingDates: List<String>? = null,
-    @Expose
+
+
     var address: String? = null,
     //@Expose
     //val doctorList: List<MedDoctor>? = null,

@@ -11,7 +11,9 @@ import androidx.navigation.fragment.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.medapp.R
 import com.example.medapp.domain.entity.MedCenter
+import com.example.medapp.domain.entity.MedServiceBanner
 import com.example.medapp.domain.entity.NetworkResult
+import com.example.medapp.presentation.main.adapters.MainFragmentFirstBannerItemAdapter
 import com.example.medapp.presentation.main.adapters.MainFragmentSecondBannerItemAdapter
 import com.example.medapp.presentation.main.viewmodel.MainFragmentViewModel
 import com.example.medapp.presentation.registration.activity.RegistrationActivity
@@ -66,21 +68,49 @@ class MainFragment : Fragment() {
         recyclerView.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         recyclerView.addItemDecoration(RecyclerViewItemSpace(16))
+
+        // change to actual values
+        recyclerView.adapter = MainFragmentFirstBannerItemAdapter(
+            listOf(
+                MedServiceBanner(
+                    name = "Новости"
+                ),
+                MedServiceBanner(
+                    name = "Акции"
+                ),
+                MedServiceBanner(
+                    name = "Бонусы"
+                )
+            ), ::onBannerClicked
+        )
+
         secondBannerRecycler.layoutManager =
             LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
         secondBannerRecycler.addItemDecoration(RecyclerViewItemSpace(16))
     }
 
+    private fun onBannerClicked(banner: MedServiceBanner) {
+        findNavController().navigate(MainFragmentDirections.actionMainFragmentToNewsFragment())
+    }
     private fun initListeners() {
         showAllBnt.setSafeClickListener {
-//            findNavController()
-//                .navigate(MainFragmentDirections.actionMainFragmentToAboutMedCentrFragment())
+
         }
-        navBarClinic.setSafeClickListener { AboutMedCenterFragment.getInstance().show(requireActivity().supportFragmentManager, "clinics") }
+        navBarClinic.setSafeClickListener {
+            AboutMedCenterFragment.getInstance()
+                .show(requireActivity().supportFragmentManager, "clinics")
+        }
         navBarSpecialist.setSafeClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToFreelanceDoctors()) }
-        navBarService.setSafeClickListener { }
-        navBarSymptoms.setSafeClickListener { }
-        navBarLogin.setSafeClickListener { requireActivity().startActivity(Intent(context, RegistrationActivity::class.java)) }
+        navBarService.setSafeClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToServicesFragment()) }
+        navBarSymptoms.setSafeClickListener { findNavController().navigate(MainFragmentDirections.actionMainFragmentToSymptomsFragment()) }
+        navBarLogin.setSafeClickListener {
+            requireActivity().startActivity(
+                Intent(
+                    context,
+                    RegistrationActivity::class.java
+                )
+            )
+        }
     }
 
     private fun initObservers() {
@@ -117,7 +147,7 @@ class MainFragment : Fragment() {
     }
 
     private fun initViewModel() {
-        //mainFragmentViewModel.getBestMedCenters()
+        mainFragmentViewModel.getBestMedCenters()
     }
 
     private fun initView() {

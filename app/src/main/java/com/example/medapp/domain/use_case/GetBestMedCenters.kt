@@ -4,7 +4,9 @@ import com.example.medapp.domain.entity.MedCenter
 import com.example.medapp.domain.entity.NetworkResult
 import com.example.medapp.domain.repository.MedCenterRepository
 
-class GetBestMedCenters(private val medCentersRepository: MedCenterRepository) {
+open class
+GetBestMedCenters
+    (private val medCentersRepository: MedCenterRepository) {
 
     suspend operator fun invoke(): NetworkResult<List<MedCenter>> {
         val response = medCentersRepository.getBestMedCenters()
@@ -15,3 +17,4 @@ class GetBestMedCenters(private val medCentersRepository: MedCenterRepository) {
         }
     }
 }
+

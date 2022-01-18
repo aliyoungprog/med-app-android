@@ -4,7 +4,7 @@
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="main_menu_title">Главная</string>
     <string name="messages_menu_title">Сообщения</string>
-    <string name="health_menu_title">Здоровье</string>
+    <string name="health_menu_title">Мое здоровье</string>
     <string name="notification_menu_title">Уведомления</string>
     <string name="profile_menu_title">Профиль</string>
     <string name="menu_bar_item_img">menu_bar_item_img</string>

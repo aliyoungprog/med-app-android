@@ -30,6 +30,19 @@
             app:destination="@id/freelanceDoctors"
             app:enterAnim="@anim/nav_default_enter_anim"
             app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_mainFragment_to_servicesFragment"
+            app:destination="@id/servicesFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_mainFragment_to_symptomsFragment"
+            app:destination="@id/symptomsFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim" />
+        <action
+            android:id="@+id/action_mainFragment_to_newsFragment"
+            app:destination="@id/newsFragment" />
     </fragment>
 
     <fragment
@@ -57,10 +70,39 @@
         android:id="@+id/medCenterDescriptionFragment"
         android:name="com.example.medapp.presentation.main.fragments.MedCenterDescriptionFragment"
         android:label="fragment_med_center_discription"
-        tools:layout="@layout/fragment_med_center_discription" />
+        tools:layout="@layout/fragment_med_center_discription" >
+        <action
+            android:id="@+id/action_medCenterDescriptionFragment_to_doctorDescriptionFragment"
+            app:destination="@id/doctorDescriptionFragment" />
+    </fragment>
     <fragment
         android:id="@+id/freelanceDoctors"
         android:name="com.example.medapp.presentation.main.fragments.FreelanceDoctorsFragment"
         android:label="freelance_doctors_fragment"
         tools:layout="@layout/tab_freelance_doctors_fragment" />
+    <fragment
+        android:id="@+id/servicesFragment"
+        android:name="com.example.medapp.presentation.main.fragments.ServicesFragment"
+        android:label="services_fragment"
+        tools:layout="@layout/services_fragment" />
+    <fragment
+        android:id="@+id/symptomsFragment"
+        android:name="com.example.medapp.presentation.main.fragments.SymptomsFragment"
+        android:label="symptoms_fragment"
+        tools:layout="@layout/symptoms_fragment" />
+    <fragment
+        android:id="@+id/doctorDescriptionFragment"
+        android:name="com.example.medapp.presentation.main.fragments.DoctorDescriptionFragment"
+        android:label="doctor_description_fragment"
+        tools:layout="@layout/doctor_description_fragment" />
+    <fragment
+        android:id="@+id/doctorAdminFragment"
+        android:name="com.example.medapp.presentation.doctor_admin.presentation.fragment.DoctorAdminFragment"
+        android:label="doctor_admin_fragment"
+        tools:layout="@layout/doctor_admin_fragment" />
+    <fragment
+        android:id="@+id/newsFragment"
+        android:name="com.example.medapp.presentation.main.fragments.NewsFragment"
+        android:label="news_fragment"
+        tools:layout="@layout/news_fragment" />
 </navigation>
